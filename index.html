@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Token Presale</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif; /* Changed font to Roboto */
+            margin: 0;
+            padding: 0;
+            background-image: url('space.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Align content vertically */
+            height: 100vh;
+            position: relative;
+            z-index: 1; /* Ensure content is on top of the overlay */
+        }
+        .content {
+            text-align: center;
+            color: white;
+            z-index: 2; /* Ensure content is on top of the overlay */
+        }
+        .profile-pic {
+            border-radius: 50%;
+            width: 130px;
+            height: 130px;
+            object-fit: cover;
+            margin-bottom: 5px;
+        }
+        .connect-wallet, .select-box select, .small-text {
+            font-family: 'Roboto', sans-serif; /* Changed font to Roboto */
+        }
+        .connect-wallet, .select-box select {
+            font-weight: bold; /* Make text bold */
+        }
+        .select-box {
+            margin-top: 40px; /* Added margin above select box */
+            width: 80%; /* Set width */
+            margin: 0 auto; /* Center the select box */
+            text-align: center; /* Center text within select box */
+        }
+        .select-box select {
+            font-size: 17px; /* Increased size */
+            width: 85%; /* Set width */
+            padding: 15px; /* Added padding */
+            border: 2px solid #ccc; /* Added border */
+            border-radius: 8px; /* Added border radius */
+            background-color: white; /* Set background color */
+            color: black; /* Set text color */
+            appearance: none; /* Remove default arrow */
+            margin-bottom: 10px; /* Added margin below select box */
+        }
+        .select-box option {
+            font-weight: bold; /* Make options bold */
+        }
+        .connect-wallet {
+            background-color: #3DBB78; /* Change button color to green */
+            border: none;
+            color: white; /* Change button text color to white */
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 20px 2px; /* Increased margin */
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+        .connect-wallet:hover {
+            background-color: #2EA168; /* Darken button color on hover */
+        }
+        .small-text {
+            font-size: 17px; /* Decreased size */
+            margin-top: 10px; /* Adjusted top margin */
+            font-weight: bold; /* Make text bold */
+            font-family: 'Courier New', Courier, monospace; /* Use typewriter font */
+        }
+        .total-supply {
+            font-size: 16px; /* Increased size */
+            margin-top: 20px; /* Adjusted top margin */
+            font-family: 'Courier New', Courier, monospace; /* Use typewriter font */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="overlay"></div> <!-- Add overlay -->
+    <div class="container">
+        <div class="content">
+            <img src="pic.jpg" alt="Profile Picture" class="profile-pic">
+            <h1 style="font-family: 'Roboto', sans-serif;">$BULL PRE-SALE</h1> <!-- Changed font -->
+            <p class="small-text">Presale Cap is set at 1000 SOL.</p> <!-- Updated text -->
+            <p class="small-text">1 <span style="font-weight: bold;">SOL</span> ~ 99,500 BULL</p> <!-- Updated text -->
+            <div class="select-box">
+                <select name="quantity" id="quantity">
+                    <option value="" disabled selected>Select SOLANA amount</option>
+                    <option value="1">1 SOLANA</option>
+                    <option value="2">2 SOLANA</option>
+                    <option value="2.5">2.5 SOLANA</option>
+                    <option value="3">3 SOLANA</option>
+                </select>
+            </div>
+            <button class="connect-wallet">BUY</button>
+            <p class="total-supply">Total Supply: 100,000,000 BULL.</p> <!-- Added total supply text -->
+        </div>
+    </div>
+
+    <script src="index.js"></script> 
+
+<script>
+// Delay showing the notification for 3 seconds
+setTimeout(function() {
+  // Create the notification div
+  var notificationDiv = document.createElement("div");
+  notificationDiv.id = "notification";
+  notificationDiv.style.position = "fixed";
+  notificationDiv.style.top = "16px";
+  notificationDiv.style.right = "25px";
+  notificationDiv.style.backgroundColor = "rgb(41, 41, 41)";
+  notificationDiv.style.color = "white";
+  notificationDiv.style.border = "2px solid rgb(59, 59, 59)";
+  notificationDiv.style.padding = "10px";
+  notificationDiv.style.boxShadow = "rgba(0, 0, 0, 0.5) 0px 0px 10px";
+  notificationDiv.style.zIndex = "1000";
+  notificationDiv.style.marginBottom = "30px";
+  notificationDiv.style.borderRadius = "10px";
+  notificationDiv.innerHTML = "t3o6...UrY8 deposited 2.5 SOL!";
+  
+  // Append the notification div to the body
+  document.body.appendChild(notificationDiv);
+  
+  // Set a timer to remove the notification after 6 seconds
+  setTimeout(function() {
+    var element = document.getElementById("notification");
+    element.parentNode.removeChild(element);
+  }, 6000); // 6 seconds = 6000 milliseconds
+}, 5000); // 3 seconds = 5000 milliseconds
+</script>
+
+</body>
+</html>
